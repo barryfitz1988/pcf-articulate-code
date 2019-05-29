@@ -1,5 +1,5 @@
 applications:
-- name: articulate
+- name: articulate-barry-fitz-cd
   path: target/articulate-1.0.jar
   memory: 512M
   random-route: true
@@ -9,5 +9,4 @@ applications:
   stack: cflinuxfs2
   env:
     JAVA_OPTS: -Xss228k
-  services:
-  - attendee-service
+
