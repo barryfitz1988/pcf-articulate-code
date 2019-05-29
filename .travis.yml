@@ -4,7 +4,6 @@ notifications:
   email: false
 env:
   - RELEASE_TAG="release-$TRAVIS_BUILD_NUMBER"
-  - GITHUB_PROJECT="pcf-articulate-code"
 if: tag IS blank
 
 jobs:
@@ -40,7 +39,7 @@ jobs:
       script:
         - echo "Downloading $RELEASE_TAG"
         - env && ./mvnw package -B
-        - wget -P build/libs https://github.com/$GITHUB_USERNAME/$GITHUB_PROJECT/releases/download/$RELEASE_TAG/pal-tracker.jar
+        - wget -P build/libs https://github.com/$GITHUB_USERNAME/pcf-articulate-code/releases/download/$RELEASE_TAG/pal-tracker.jar
       before_deploy:
         - echo "Deploying $RELEASE_TAG to Cloud Foundry"
       before_script:
